@@ -1,0 +1,18 @@
+version: '1.0.0'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wall
+      MYSQL_USER: ivan
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3309:3306"
+
+    volumes:
+      - my-wall:/var/lib/mysql
+
+volumes:
+  my-wall:
